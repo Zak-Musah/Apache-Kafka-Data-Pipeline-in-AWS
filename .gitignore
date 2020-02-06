@@ -1,0 +1,4 @@
+.env
+/word-count-data
+/__pycache__
+parsed.json
