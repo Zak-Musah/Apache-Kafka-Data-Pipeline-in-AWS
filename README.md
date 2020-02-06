@@ -38,7 +38,7 @@ All the dependencies, be it access control or software have been taken care of i
 ##  Step 2: Create – Access Keys 
 In the IAM console click on <b>Manage Security Credentials</b>
 
-![Image](Screenshots/ACCESSKEY1.png?raw=true "ACCESSKEY1")
+![Image](Screenshots/ACCESSKEY1.PNG?raw=true "ACCESSKEY1")
  
 Click on <b>Create New Access Key</b> and then <b>Download Key File</b>
  
@@ -49,29 +49,29 @@ In the EC2 <b>Key pairs page</b> click on <b>Create key pair</b> and provide a <
 
 Now click on <b>Create key pair</b> and MSKkeyPair is downloaded automatically. 
 
-![Image](Screenshots/MSKKeyPair.png?raw=true "MSKKeyPair")
+![Image](Screenshots/MSKKeyPair.PNG?raw=true "MSKKeyPair")
 
 
 ## Step 4: Deploying the MSK Cluster + S3 Bucket
 In the AWS console - <b>Services</b> go to <b>CloudFormation</b> and then click <b>Create stack</b>
 
-![Image](Screenshots/CF1.png?raw=true "CF1")
+![Image](Screenshots/CF1.PNG?raw=true "CF1")
  
 Select the location of the CloudFormation document and click <b>Next.</b>
 
-![Image](Screenshots/CF2.png?raw=true "CF2")
+![Image](Screenshots/CF2.PNG?raw=true "CF2")
  
 Provide a name and select the KeyName created in step 3
 
-![Image](Screenshots/CF3.png?raw=true "CF3")
+![Image](Screenshots/CF3.PNG?raw=true "CF3")
  
 Optionally add a tag Name and Value
 
-![Image](Screenshots/CF4.png?raw=true "CF4")
+![Image](Screenshots/CF4.PNG?raw=true "CF4")
 
 Acknowledge and <b>Create Stack</b>
 
-![Image](Screenshots/CF5.png?raw=true "CF5")
+![Image](Screenshots/CF5.PNG?raw=true "CF5")
 
 
  
