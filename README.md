@@ -2,7 +2,7 @@
 Scientific publications are continuously loaded to Amazon S3 and processed with Apache Kafka to create an output topic with word counts of the text corpus.
 In this mini project, a data streaming pipeline is built with Apache Kafka and Faust to perform the word counting. Faust is a stream processing library, porting the ideas from Kafka Streams to Python as described by its owners.
 
-Additionally, in order to take care of default max message size in Kafka for large text files greater than 1 MB; we’ll leverage on another python library from Amazon, Boto 3 with capabilities of reading objects in S3 transparently and feed to Faust application agents.
+By default the maximum file size that can be sent to Kafka is 1 MB and in order to take care text files greater than 1 MB; we’ll leverage on another python library from Amazon, Boto 3 with capabilities of reading objects in S3 transparently and feed to Faust application agents to complete the word counting.
 
 ![Image](Screenshots/Flowchart.PNG?raw=true "Flowchart")
 
@@ -103,7 +103,7 @@ bin/kafka-server-start.sh config/server.properties
 
 ### Starting the producer and Consumer:
 
-Upload the wordcount.py to the /home/ec2-user directory. Three files with different names but same content are uploaded to S3 in turns and  the word counts in each round is observed through the Faust app tables and the Output Topic in Kafka through the Kafka Console Consumer. The worker is built with a task timer of 1s. That is to say, the worker listens for the presence of new objects in the S3 bucket every second. 
+Upload the wordcount.py to the /home/ec2-user directory. Three files with different names but same content are uploaded to S3 in turns and  the word counts in each round is observed through the Faust app tables and the Output Topic in Kafka through the Kafka Console Consumer. The worker is built with a task timer of 30s. That is to say, the worker listens for the presence of new objects in the S3 bucket every thirty seconds. 
 
 <b><i>Watch Out!</i></b>
 
@@ -135,4 +135,4 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic word-cou
   ![Image](Screenshots/P4.PNG?raw=true "P4")
 
 # Conclusion
-The last but two words in the console consumer “the” and “star” appears one hundred and twentieth and one times respectively in the first instance of file upload to S3, accumulating to three hundred and sixty and three respectively on the third upload indicating the Word Count App is working as expected.
+The last but two words in the console consumer “the” and “star” appears one hundred and twentieth and one times respectively in the first instance of file upload to S3, accumulating to three hundred and sixty and three respectively on the third upload indicating the Word Count App is working as expected. The application have been tested for all the requirements of the use case.
