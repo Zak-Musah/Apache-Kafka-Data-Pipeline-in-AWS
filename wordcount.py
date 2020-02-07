@@ -1,4 +1,4 @@
-#!/bin/sh
+
 import faust
 import asyncio
 from boto3.session import Session
